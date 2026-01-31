@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADEPTUS MECHANICUS COGITATOR INTERFACE - Waybar GTK CSS
+   "The Omnissiah knows all, comprehends all."
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+    font-family: "JetBrains Mono", "Fira Code", "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE PANEL - The Cogitator Frame
+   ───────────────────────────────────────────────────────────────────────────── */
+
+window#waybar {
+    background: rgba(12, 4, 4, 0.94);
+    border: 1px solid #5c0011;   /* dark wine core */
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 4px  rgba(160, 0, 40, 0.9),  /* tight bright edge glow */
+        0 0 14px rgba(120, 0, 32, 0.6),  /* mid halo */
+        0 0 28px rgba(80, 0, 24, 0.35),  /* wide soft wine glow */
+        inset 0 0 20px rgba(0, 0, 0, 0.45); /* subtle inner shading */
+}
+
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Tooltip - Data-Scroll popup */
+tooltip {
+    background: #080808;
+    border: 1px solid #bb0000;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 32, 32, 0.4),
+                0 0 20px rgba(204, 0, 0, 0.2);
+}
+
+tooltip label {
+    color: #ff3030;
+    text-shadow: 0 0 4px #ff2020;
+    padding: 4px 8px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MODULE BASE - Standard Machine Spirit Interface
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-cog-seal,
+#workspaces,
+#window,
+#custom-incense-time,
+#custom-cogitator-core,
+#custom-noospheric-buffer,
+#custom-machine-spirit-temp,
+#pulseaudio,
+#network,
+#battery,
+#custom-power-rite {
+    color: #ff3030;
+    padding: 0 12px;
+    margin: 4px 2px;
+    background: rgba(20, 8, 8, 0.85);
+    border-radius: 2px;
+    border: 1px solid transparent;
+    text-shadow: 0 0 4px #ff2020, 0 0 8px rgba(255, 32, 32, 0.5);
+}
+
+/* Hover - Machine Spirit acknowledgment */
+#custom-cog-seal:hover,
+#custom-incense-time:hover,
+#custom-cogitator-core:hover,
+#custom-noospheric-buffer:hover,
+#custom-machine-spirit-temp:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#custom-power-rite:hover {
+    background: rgba(180, 0, 0, 0.3);
+    border-color: #bb0000;
+    box-shadow: 0 0 8px rgba(255, 32, 32, 0.5), inset 0 0 10px rgba(255, 32, 32, 0.1);
+    text-shadow: 0 0 6px #ff4040, 0 0 12px rgba(255, 64, 64, 0.7);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COG SEAL - Sacred Symbol of the Omnissiah
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-cog-seal {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SEPARATOR - Sacred Dividers
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-separator {
+    color: #ff6060;
+    padding: 0 2px;
+    margin: 1px 0;
+    background: transparent;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+    border: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WORKSPACES - Forge Sector Designations
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#workspaces {
+    padding: 0 2px;
+}
+
+#workspaces button {
+    color: #ff6060;
+    padding: 0 8px;
+    margin: 4px 2px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#workspaces button:hover {
+    color: #ff6060;
+    background: rgba(180, 0, 0, 0.2);
+    border-color: #660000;
+}
+
+#workspaces button.active {
+    color: #ff6060;
+    background: rgba(180, 0, 0, 0.4);
+    border: 1px solid #bb0000;
+    box-shadow: 0 0 6px rgba(255, 32, 32, 0.4), inset 0 0 8px rgba(255, 32, 32, 0.1);
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.9);
+}
+
+#workspaces button.urgent {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WINDOW TITLE - Active Process Designation
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#window {
+    color: #ff6060;
+    border: 1px solid transparent;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+    font-style: italic;
+    margin: 4px 2px;
+    padding: 0 16px;
+}
+
+#window.empty {
+    background: transparent;
+    border: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CHRONOMETER - Sacred Time Display
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-incense-time {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    color: #ff6060;
+    border: 1px solid #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TELEMETRY MODULES - Sacred Diagnostics
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-cogitator-core {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#custom-noospheric-buffer {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#custom-machine-spirit-temp {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+/*
+#custom-data-sanctum {
+    color: #ff3030;
+}
+*/
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   VOX-CASTER - Audio Output
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#pulseaudio {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#pulseaudio.muted {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #aa2020;
+    text-shadow: none;
+    opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   NOOSPHERIC UPLINK - Network Status
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#network {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#network.disconnected {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff0000;
+    text-shadow: 0 0 6px #ff0000, 0 0 12px rgba(255, 0, 0, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   POWER CELL - Battery Status
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#battery {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff4040, 0 0 10px rgba(255, 64, 64, 0.6);
+}
+
+#battery.warning:not(.charging) {
+    color: #ff8800;
+    text-shadow: 0 0 6px #ff8800;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff9900;
+    text-shadow: 0 0 8px #ff9900;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   POWER RITE - Shutdown Control
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#custom-power-rite {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+#custom-power-rite:hover {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+    text-shadow: 0 0 8px #ff0000, 0 0 16px rgba(255, 0, 0, 0.5);
+}

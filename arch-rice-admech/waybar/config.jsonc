@@ -1,0 +1,171 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "modules-left": [
+        "custom/cog-seal",
+        "hyprland/workspaces",
+        "custom/separator",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "custom/incense-time"
+    ],
+
+    "modules-right": [
+        "custom/cogitator-core",
+        "custom/separator",
+        "custom/noospheric-buffer",
+        "custom/separator",
+        "custom/machine-spirit-temp",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "battery",
+        "custom/separator",
+        "custom/power-rite"
+    ],
+
+    // ══════════════════════════════════════════════════
+    // SACRED IDENTIFIERS
+    // ══════════════════════════════════════════════════
+
+    "custom/cog-seal": {
+        "format": "⚙",
+        "tooltip-format": "Praise the Omnissiah\nThe Machine God protects"
+    },
+
+    "custom/separator": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    // ══════════════════════════════════════════════════
+    // WORKSPACE DESIGNATION - FORGE SECTORS
+    // ══════════════════════════════════════════════════
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Ⅰ",
+            "2": "Ⅱ",
+            "3": "Ⅲ",
+            "4": "Ⅳ",
+            "5": "Ⅴ",
+            "6": "Ⅵ",
+            "7": "Ⅶ",
+            "8": "Ⅷ",
+            "9": "Ⅸ",
+            "10": "Ⅹ",
+            "urgent": "⚠",
+            "default": "◈"
+        },
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "⟨ {class} ⟩",
+        "max-length": 50,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "DATASLATE: $1",
+            "(.*)": "$1"
+        }
+    },
+
+    // ══════════════════════════════════════════════════
+    // CHRONOMETRIC DISPLAY - BLESSED HOUR
+    // ══════════════════════════════════════════════════
+
+    "custom/incense-time": {
+        "exec": "date +'☩ %H:%M:%S ☩ %d.%m.%Y.M3'",
+        "interval": 1,
+        "tooltip-format": "Blessed Hour of the Machine God\nOffer incense to the chronometer"
+    },
+
+    // ══════════════════════════════════════════════════
+    // COGITATOR TELEMETRY - SACRED DIAGNOSTICS
+    // ══════════════════════════════════════════════════
+
+    "custom/cogitator-core": {
+        "exec": "awk '/^cpu / {printf \"%.0f\", ($2+$4)*100/($2+$4+$5)}' /proc/stat",
+        "format": "⚙ CORE {}%",
+        "interval": 2,
+        "tooltip-format": "Cogitator Core Utilization\nMay the Machine Spirit process without error"
+    },
+
+    "custom/noospheric-buffer": {
+        "exec": "free -m | awk '/Mem:/ {printf \"%.1f/%.1fG\", $3/1024, $2/1024}'",
+        "format": "☷ BUFFER {}",
+        "interval": 5,
+        "tooltip-format": "Noospheric Data Buffer\nSacred memory reserves of the Machine Spirit"
+    },
+
+    "custom/machine-spirit-temp": {
+        "exec": "sensors 2>/dev/null | awk '/Package|Tctl/ {gsub(/[^0-9.]/, \"\", $4); print int($4); exit}' || echo '??'",
+        "format": "⬡ SPIRIT {}°",
+        "interval": 5,
+        "tooltip-format": "Machine Spirit Core Temperature\nMonitor for daemonic thermal interference"
+    },
+
+    // ══════════════════════════════════════════════════
+    // VOX-CASTER & NOOSPHERIC UPLINK
+    // ══════════════════════════════════════════════════
+
+    "pulseaudio": {
+        "format": "VOX {volume}%",
+        "format-muted": "VOX SILENCED",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "Vox-Caster Output: {volume}%\nDevice: {desc}"
+    },
+
+    "network": {
+        "format-wifi": "⚙ UPLINK {signalStrength}%",
+        "format-ethernet": "⚙ HARDLINE",
+        "format-disconnected": "⚠ SEVERED",
+        "tooltip-format-wifi": "Noospheric Communion Active\nDesignation: {essid}\nSignal Purity: {signalStrength}%\nFrequency: {frequency}GHz\nMachine Address: {ipaddr}",
+        "tooltip-format-ethernet": "Hardwired to the Omnissiah\nConduit: {ifname}\nMachine Address: {ipaddr}",
+        "tooltip-format-disconnected": "⚠ COMMUNION LOST ⚠\nSeek a Tech-Priest immediately",
+        "on-click": "nm-connection-editor"
+    },
+
+    // ══════════════════════════════════════════════════
+    // POWER CELL - SACRED RESERVES
+    // ══════════════════════════════════════════════════
+
+    "battery": {
+        "states": {
+            "critical": 15,
+            "warning": 30,
+            "nominal": 60,
+            "blessed": 90
+        },
+        "format": "⚡ CELL {capacity}%",
+        "format-charging": "⚡↑ RITE {capacity}%",
+        "format-plugged": "⚡ BLESSED {capacity}%",
+        "format-full": "⚡ SANCTIFIED",
+        "tooltip-format": "Power Cell Reserves: {capacity}%\nRemaining liturgy: {time}\nDraw: {power}W"
+    },
+
+    // ══════════════════════════════════════════════════
+    // SHUTDOWN RITES
+    // ══════════════════════════════════════════════════
+
+    "custom/power-rite": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip-format": "Invoke Machine Shutdown Rites\nPraise the Omnissiah upon cessation"
+    }
+}

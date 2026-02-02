@@ -1,0 +1,10 @@
+[window]
+opacity = 0.70
+
+[font]
+normal = { family  = "IBM Plex Mono", style = "semibold" }
+size = 14
+[colors]
+
+[colors.primary]
+background = "#181818" 

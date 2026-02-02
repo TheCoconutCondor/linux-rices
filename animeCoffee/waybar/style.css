@@ -1,0 +1,107 @@
+/* Vertical Left - Late Night Alley */
+/* Dark, soft, no harsh whites */
+
+* {
+    font-family: "Noto Sans CJK JP", "Noto Sans JP", "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: alpha(#12121f, 0.88);
+    color: #8a8a9e;
+    border-radius: 12px;
+    border: 1px solid alpha(#5a4a7a, 0.2);
+}
+
+button {
+    background: transparent;
+    border: none;
+    min-width: 0;
+}
+
+/* Workspaces - Kanji stacked vertically */
+#workspaces {
+    padding: 8px 0;
+}
+
+#workspaces button {
+    padding: 8px 0;
+    min-height: 24px;
+    min-width: 44px;
+    color: alpha(#6a6a82, 0.5);
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+#workspaces button.active {
+    color: #6dd4b0;
+    background-color: alpha(#6dd4b0, 0.1);
+}
+
+#workspaces button:hover {
+    color: #d4a0c4;
+    background-color: alpha(#d4a0c4, 0.08);
+}
+
+/* Clock - stacked hours/minutes */
+#clock {
+    color: #9a9ab4;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#clock:hover {
+    color: #6dd4b0;
+}
+
+/* Bottom modules */
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+    padding: 10px 0;
+    min-width: 44px;
+    color: #6a6a82;
+    font-size: 16px;
+}
+
+#pulseaudio:hover {
+    color: #d4a0c4;
+}
+
+#bluetooth:hover {
+    color: #6dd4b0;
+}
+
+#network:hover {
+    color: #6dd4b0;
+}
+
+#battery:hover {
+    color: #d4c078;
+}
+
+/* States */
+#pulseaudio.muted {
+    color: alpha(#6a6a82, 0.3);
+}
+
+#network.disconnected {
+    color: alpha(#6a6a82, 0.3);
+}
+
+#battery.charging {
+    color: #6dd4b0;
+}
+
+#battery.warning:not(.charging) {
+    color: #d4a078;
+}
+
+#battery.critical:not(.charging) {
+    color: #c87878;
+}

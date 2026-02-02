@@ -27,6 +27,8 @@
         "custom/separator",
         "pulseaudio",
         "custom/separator",
+        "bluetooth",
+        "custom/separator",
         "network",
         "custom/separator",
         "battery",
@@ -87,7 +89,7 @@
     // ══════════════════════════════════════════════════
 
     "custom/incense-time": {
-        "exec": "date +'☩ %H:%M:%S ☩ %d.%m.%Y.M3'",
+        "exec": "date +'☩ %H:%M:%S ☩ %d.%m.0%y.M3'",
         "interval": 1,
         "tooltip-format": "Blessed Hour of the Machine God\nOffer incense to the chronometer"
     },
@@ -118,7 +120,7 @@
     },
 
     // ══════════════════════════════════════════════════
-    // VOX-CASTER & NOOSPHERIC UPLINK
+    // VOX-CASTER, PULSE ARRAY & NOOSPHERIC UPLINK
     // ══════════════════════════════════════════════════
 
     "pulseaudio": {
@@ -131,11 +133,27 @@
         "tooltip-format": "Vox-Caster Output: {volume}%\nDevice: {desc}"
     },
 
+    "bluetooth": {
+        "format": "☷ NOO-BIND",
+        "format-connected": "☷ NOO-BIND[{num_connections}]",
+        "format-disabled": "⚠ NOO-SEVERED",
+
+        "tooltip-format": "Noospheric Subchannel\nSTATUS: ACTIVE\nSubchannel Arrays: {num_connections}",
+        "tooltip-format-off": "Noospheric Subchannel\nSTATUS: DORMANT",
+        "tooltip-format-disabled": "Noospheric Subchannel\nSTATUS: SEVERED",
+        
+        "on-click": "blueman-manager"
+    },
+
     "network": {
+        "format": "⚙ LINK {ifname}",
+        "format-linked": "⚙ UPLINK {signalStrength}%",
         "format-wifi": "⚙ UPLINK {signalStrength}%",
         "format-ethernet": "⚙ HARDLINE",
         "format-disconnected": "⚠ SEVERED",
+        "format-disabled": "⚠ RFKILL",
         "tooltip-format-wifi": "Noospheric Communion Active\nDesignation: {essid}\nSignal Purity: {signalStrength}%\nFrequency: {frequency}GHz\nMachine Address: {ipaddr}",
+        "tooltip-format-linked": "Noospheric Communion Active\nDesignation: {essid}\nSignal Purity: {signalStrength}%\nFrequency: {frequency}GHz\nMachine Address: {ipaddr}",
         "tooltip-format-ethernet": "Hardwired to the Omnissiah\nConduit: {ifname}\nMachine Address: {ipaddr}",
         "tooltip-format-disconnected": "⚠ COMMUNION LOST ⚠\nSeek a Tech-Priest immediately",
         "on-click": "nm-connection-editor"

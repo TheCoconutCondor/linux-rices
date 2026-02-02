@@ -1,0 +1,57 @@
+/* Reuse your existing Mechanicus theme */
+@import "style.css";
+
+/* ===============================
+   Dock surface (invisible shell)
+   =============================== */
+window#waybar.dock {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ===============================
+   Dock pill (wraps icons only)
+   =============================== */
+window#waybar.dock .modules-center {
+  background: rgba(12, 4, 4, 0.94);
+  border: 2px solid #c00202;
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 8px rgba(255, 32, 32, 0.3),
+    0 0 16px rgba(204, 0, 0, 0.2),
+    inset 0 0 30px rgba(0, 0, 0, 0.5);
+  
+  min-height: 40px;
+  padding: 0 8px;
+}
+
+/* ===============================
+   Dock icons (SIZE CONTROL)
+   =============================== */
+window#waybar.dock #custom-firefox,
+window#waybar.dock #custom-alacritty,
+window#waybar.dock #custom-webcord,
+window#waybar.dock #custom-codium {
+  font-size: 26px;     /* icon size */
+  padding: 8px 10px;   /* click target / spacing */
+
+  min-width: 40px;
+  min-height: 42px;
+
+  color: #ff6060;
+  text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
+/* Optional: hover emphasis */
+window#waybar.dock #custom-firefox:hover,
+window#waybar.dock #custom-alacritty:hover,
+window#waybar.dock #custom-webcord:hover,
+window#waybar.dock #custom-codium:hover {
+  font-size: 32px;     /* icon size */
+  padding: 8px 10px; 
+  color: #ff6060;
+  text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+
+}

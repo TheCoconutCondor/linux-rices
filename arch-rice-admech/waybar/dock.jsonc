@@ -1,0 +1,53 @@
+{
+  // =============================
+  // Adeptus Mechanicus Dock
+  // =============================
+  "name": "dock",
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 56,
+  "margin-bottom": 12,
+  "spacing": 10,
+
+  // Do NOT reserve space (dock floats like macOS)
+  "exclusive": false,
+
+  // =============================
+  // Dock Layout
+  // =============================
+
+  "modules-center": [
+    "custom/firefox",
+    "custom/alacritty",
+    "custom/webcord",
+    "custom/codium"
+  ],
+
+  // =============================
+  // Launchers (High Gothic)
+  // =============================
+
+  "custom/firefox": {
+    "format": "󰈹",
+    "tooltip": "Porta Noospherica — Gate of the Omnissiah",
+    "on-click": "firefox"
+  },
+
+  "custom/alacritty": {
+    "format": "",
+    "tooltip": "Cogitator-Prime — Litany of Command",
+    "on-click": "alacritty"
+  },
+
+  "custom/webcord": {
+    "format": "󰙯",
+    "tooltip": "Vox-Communio Sanctum — Choir of the Faithful",
+    "on-click": "webcord"
+  },
+
+  "custom/codium": {
+    "format": "󰨞",
+    "tooltip": "Forge-Scriptorium — Rite of Sanctified Logic",
+    "on-click": "codium"
+  }
+}

@@ -17,7 +17,7 @@
    ───────────────────────────────────────────────────────────────────────────── */
 
 window#waybar {
-    background: rgba(12, 4, 4, 0.94);
+    background: rgba(12, 4, 4, 0.941);
     border: 1px solid #5c0011;   /* dark wine core */
     border-radius: 4px;
 
@@ -243,6 +243,20 @@ tooltip label {
     text-shadow: none;
     opacity: 0.7;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   NOOSPHERIC BIND - Bluetooth Status
+   ───────────────────────────────────────────────────────────────────────────── */
+
+#bluetooth {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    color: #ff6060;
+    text-shadow: 0 0 6px #ff2020, 0 0 12px rgba(255, 32, 32, 0.5);
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────────
    NOOSPHERIC UPLINK - Network Status

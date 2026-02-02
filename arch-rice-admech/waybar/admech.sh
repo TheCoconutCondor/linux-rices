@@ -8,3 +8,4 @@ sleep 0.5
 
 # launch status bars. Praise the Omnissiah.
 waybar &
+waybar -c ~/.config/waybar/dock.jsonc -s ~/.config/waybar/dock.css &

@@ -1,0 +1,42 @@
+#-----------------------------------
+#  LOCK SCREEN FOR ~yoru-cafe~ 	   |
+#-----------------------------------
+
+# [APPEARANCE]
+
+font=Noto Sans CJK JP
+font-size=20
+
+clock
+datestr=%m 月 %d
+timestr=%H:%M
+
+image=~/.config/hyprpaper/animeCoffeeUW.jpeg
+
+indicator-idle-visible
+indicator-radius=200
+
+# [EFFECTS]
+
+fade-in=0.1
+effect-blur=12x2
+
+# [COLORS]
+
+inside-color=12121f3a
+text-color=9a9ab4ff
+
+key-hl-color=9a9ab43a
+ring-color=9a9ab43a
+separator-color=12121f3a
+
+inside-clear-color=5a4a7a3a
+text-clear-color=9a9ab4ff
+ring-clear-color=5a4a7a3a
+
+text-ver-color=9a9ab4ff
+
+inside-caps-lock-color=5a4a7a3a
+text-caps-lock-color=9a9ab4ff
+
+inside-wrong-color=d4a0c43a

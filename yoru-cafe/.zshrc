@@ -27,3 +27,7 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=#5a4a7a'           # muted purple-gray
 ZSH_HIGHLIGHT_STYLES[string]='fg=#6dd4b0'            # yellow strings
 ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#6dd4b0'  # green separators
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#3a3d5c'
+export PATH="$HOME/.odin/versions/dev-2026-02:$PATH"
+export PATH="$HOME/.odin/versions/dev-2026-02/ols:$PATH"
+export PATH="/opt/zen:$PATH"
+export PATH="$HOME/.zig/versions/dev_16_0:$PATH"

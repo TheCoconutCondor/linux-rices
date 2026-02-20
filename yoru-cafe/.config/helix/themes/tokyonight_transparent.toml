@@ -2,3 +2,5 @@ inherits = "tokyonight"
 "ui.background" = {}
 "ui.foreground" = {}
 
+[palette]
+comment = "#9af5da"

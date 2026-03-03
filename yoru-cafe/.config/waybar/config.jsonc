@@ -8,7 +8,7 @@
     "margin-left": 8,
 
     "modules-left": [
-        "hyprland/workspaces"
+        "niri/workspaces"
     ],
     "modules-center": [
         "clock"
@@ -20,7 +20,7 @@
         "battery"
     ],
 
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
             "1": "一",

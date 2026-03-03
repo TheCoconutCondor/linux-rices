@@ -1,0 +1,12 @@
+[window]
+opacity = 0.80
+[terminal]
+shell = "/bin/zsh"
+
+[font]
+normal = { family  = "IBM Plex Mono", style = "semibold" }
+size = 14
+[colors]
+
+[colors.primary]
+background = "#0B1F19" 

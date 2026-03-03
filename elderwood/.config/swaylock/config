@@ -1,0 +1,43 @@
+font=IBM Plex Sans,Noto Sans,Noto Sans Runic
+font-size=20
+
+clock
+datestr=%b %d
+timestr=%H:%M
+
+# WALLPAPER
+image=~/.config/hyprpaper/elderwood.png
+
+indicator-idle-visible
+indicator-radius=200
+
+# [EFFECTS]
+fade-in=0.12
+effect-blur=12x2
+
+# [COLORS]
+# Core: deep emerald glass + parchment text
+inside-color=0B1F1955
+text-color=D8C8A8FF
+
+# Ring + separators: moss / carved seam
+key-hl-color=2F6B5388
+ring-color=2F6B5366
+separator-color=D8C8A822
+
+# Clear: parchment wash
+inside-clear-color=D8C8A833
+text-clear-color=D8C8A8FF
+ring-clear-color=7FAF9655
+
+# Verifying: calm sage
+text-ver-color=7FAF96FF
+
+# Caps lock: amber leaf warning
+inside-caps-lock-color=8C6A3A44
+text-caps-lock-color=D8C8A8FF
+
+# Wrong password: muted rust
+inside-wrong-color=B56B5A44
+text-wrong-color=D8C8A8FF
+ring-wrong-color=B56B5A66

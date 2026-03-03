@@ -1,0 +1,193 @@
+/* ===========================
+   Elderwood — Waybar (GTK CSS)
+   Left pillar, nordic + ethereal
+   =========================== */
+
+/* ---- Palette tokens ---- */
+@define-color emerald_bg      #0B1F19;  /* deep emerald */
+@define-color emerald_mid     #17382E;  /* mid emerald */
+@define-color moss            #2F6B53;  /* moss accent */
+@define-color parchment       #D8C8A8;  /* parchment highlight */
+@define-color parchment_soft  #CBBFA2;  /* parchment muted */
+@define-color bark            #141815;  /* near-black green */
+@define-color iron            #3A3F3B;  /* muted iron */
+@define-color warn_amber      #8C6A3A;  /* muted amber */
+
+/* ---- Global ---- */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+
+  font-family: "IBM Plex Mono", "JetBrainsMono Nerd Font", "Noto Sans";
+  font-size: 13px;
+}
+
+/* ---- Bar container ---- */
+window#waybar {
+  background: @emerald_bg;
+  color: @parchment_soft;
+
+  /* faint “rune seam” on the right edge */
+  border-right: 1px solid rgba(216, 200, 168, 0.12);
+}
+
+/* Optional: if you want the bar to feel slightly “lifted” off the wallpaper
+   (Waybar supports box-shadow in some setups, but not all; safe to keep subtle) */
+window#waybar {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.10);
+}
+
+/* Keep the vertical layout clean */
+#workspaces,
+#clock,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#idle_inhibitor {
+  margin: 4px 6px;      /* creates air inside the pillar */
+  padding: 8px 0;       /* vertical rhythm */
+  border-radius: 10px;  /* soft, shrine-like rounding */
+}
+
+/* ===========================
+   Workspaces (niri)
+   =========================== */
+#workspaces {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 6px 0;
+}
+
+#workspaces button {
+  background: transparent;
+  color: @moss;
+  margin: 4px 0;
+  padding: 6px 0;
+  border-radius: 8px;
+
+  transition: color 150ms ease, background 150ms ease;
+}
+
+/* Active: “carved recess” look */
+#workspaces button.active {
+  background: rgba(23, 56, 46, 0.65); /* @emerald_mid with alpha */
+  color: @parchment;
+}
+
+/* Hover: brighten text only (no glow) */
+#workspaces button:hover {
+  background: rgba(216, 200, 168, 0.08);
+  color: @parchment;
+}
+
+/* Optional: urgent styling (if your compositor sets it) */
+#workspaces button.urgent {
+  color: @parchment;
+  background: rgba(140, 106, 58, 0.25); /* warn amber wash */
+}
+
+/* ===========================
+   Clock (center)
+   =========================== */
+#clock {
+  color: @parchment;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  /* Slight inset panel */
+  background: rgba(20, 24, 21, 0.35); /* bark tint */
+}
+
+#clock:hover {
+  background: rgba(216, 200, 168, 0.10);
+}
+
+/* ===========================
+   Module “rune plates”
+   =========================== */
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#idle_inhibitor {
+  background: rgba(20, 24, 21, 0.25);
+  color: @parchment_soft;
+
+  transition: background 150ms ease, color 150ms ease;
+}
+
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#idle_inhibitor:hover {
+  background: rgba(23, 56, 46, 0.55);
+  color: @parchment;
+}
+
+/* Pulseaudio states */
+#pulseaudio.muted {
+  color: rgba(203, 191, 162, 0.55);
+  background: rgba(20, 24, 21, 0.18);
+}
+
+/* Network states */
+#network.disconnected {
+  color: rgba(203, 191, 162, 0.55);
+  background: rgba(20, 24, 21, 0.18);
+}
+
+/* Bluetooth states (module names vary a bit; these are safe) */
+#bluetooth.off,
+#bluetooth.disabled {
+  color: rgba(203, 191, 162, 0.55);
+  background: rgba(20, 24, 21, 0.18);
+}
+
+/* Battery states */
+#battery.charging {
+  color: @parchment;
+}
+
+#battery.warning:not(.charging) {
+  color: @warn_amber;
+}
+
+#battery.critical:not(.charging) {
+  color: @parchment;
+  background: rgba(140, 106, 58, 0.25);
+}
+
+/* Idle inhibitor (if you use it) */
+#idle_inhibitor.activated {
+  color: @parchment;
+  background: rgba(47, 107, 83, 0.25); /* moss wash */
+}
+
+/* ===========================
+   Tooltip styling (very important for vibe)
+   =========================== */
+tooltip {
+  background: rgba(11, 31, 25, 0.92);
+  border: 1px solid rgba(216, 200, 168, 0.20);
+  border-radius: 10px;
+  padding: 10px;
+
+  color: @parchment;
+}
+
+tooltip label {
+  color: @parchment;
+  font-family: "IBM Plex Mono", "JetBrainsMono Nerd Font", "Noto Sans";
+  font-size: 12px;
+}
+
+/* ===========================
+   Optional: make the whole pillar feel slightly “tapered”
+   (This is subtle; keep or remove)
+   =========================== */
+window#waybar {
+  margin: 0;
+}

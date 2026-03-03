@@ -1,0 +1,148 @@
+/*
+ * Elderwood - Rofi Theme
+ * Nordic, ethereal, natural (emerald + parchment)
+ */
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "";
+    drun-display-format: "{name}";
+    font: "IBM Plex Mono 12, Noto Sans Runic 12";
+}
+
+* {
+    /* Elderwood palette */
+    bg:        #0B1F19E6;   /* deep emerald w/ transparency */
+    bg-alt:    #0F2E24;     /* mid emerald panel */
+    fg:        #D8C8A8;     /* parchment */
+    fg-alt:    #9F9278;     /* muted parchment */
+
+    accent:    #2F6B53;     /* moss */
+    accent-alt:#8C6A3A;     /* muted amber */
+
+    border-color: #D8C8A820; /* faint parchment line */
+
+    background-color: transparent;
+    text-color: @fg;
+
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @bg;
+    border: 1px solid;
+    border-color: @border-color;
+    border-radius: 14px;
+
+    width: 480px;
+    height: 640px;
+}
+
+/* Layout */
+mainbox {
+    children: [image-box, listbox];
+    orientation: horizontal;
+}
+
+/* Left panel - Image (keep your image, but let the palette do the work) */
+image-box {
+    background-image: url("~/.config/rofi/elderwood-rofi.png");
+    background-color: @bg-alt;
+    background-repeat: false;
+    size: 300px 625px;
+
+    /* subtle separation without a harsh border */
+    border: 0px 1px 0px 0px;
+    border-color: @border-color;
+}
+
+/* Right panel */
+listbox {
+    children: [inputbar, listview];
+    padding: 20px 16px;
+    spacing: 16px;
+}
+
+/* Input */
+inputbar {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background-color: @bg-alt;
+    border: 1px solid;
+    border-color: #D8C8A812;
+}
+
+prompt {
+    text: "ᛟ ";
+    text-color: @accent;
+}
+
+entry {
+    placeholder: "ᚠᛁᚾᛞ...";
+    placeholder-color: @fg-alt;
+    text-color: @fg;
+    cursor-color: @accent;
+}
+
+/* Results */
+listview {
+    columns: 1;
+    lines: 8;
+    cycle: false;
+    scrollbar: false;
+    spacing: 10px;
+}
+
+/* Default rows */
+element normal.normal,
+element alternate.normal {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background-color: rgba(15, 46, 36, 0.75); /* bg-alt with softness */
+    text-color: @fg;
+    border: 1px solid;
+    border-color: rgba(216, 200, 168, 0.07);
+}
+
+/* Selected row: parchment wash, “sacred highlight” */
+element selected.normal {
+    padding: 10px 12px;
+    border-radius: 10px;
+
+    background-color: rgba(216, 200, 168, 0.14);
+    text-color: @fg;
+
+    border: 1px solid;
+    border-color: rgba(216, 200, 168, 0.18);
+}
+
+/* Text + icon */
+element-text {
+    padding: 6px 8px;
+    spacing: 2px;
+
+    /* keep text parchment, but let the *selection* feel highlighted */
+    text-color: @fg;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 12px 0 0;
+}
+
+/* Optional: make selected entry's name slightly mossy */
+element selected.normal element-text {
+    text-color: @fg;
+}
+
+/* Message / error boxes (if any) */
+message {
+    background-color: @bg-alt;
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid;
+    border-color: #D8C8A812;
+}

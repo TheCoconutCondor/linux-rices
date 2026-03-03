@@ -1,0 +1,97 @@
+{
+  "layer": "top",
+  "position": "left",
+  "width": 44,
+  "spacing": 4,
+  "margin-top": 12,
+  "margin-bottom": 12,
+  "margin-left": 8,
+
+  "modules-left": [
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "battery"
+  ],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "ᛁ",
+      "2": "ᛂ",
+      "3": "ᛃ",
+      "4": "ᛅ",
+      "5": "ᛇ",
+      "6": "ᛉ",
+      "7": "ᛋ",
+      "8": "ᛏ",
+      "9": "ᛒ",
+      "10": "ᛗ"
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "clock": {
+    "format": "{:%H\n%M\n\n%d\n%b}",
+    "format-alt": "{:%a\n%d\n%b\n%Y}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+
+  "idle_inhibitor": {
+    "format": "ᛟ",
+    "format-activated": "ᛟ",
+    "tooltip-format": "Keep awake",
+    "tooltip-format-activated": "Keep awake (active)"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "ᛞ",
+    "format-icons": {
+      "default": ["ᚦ", "ᚨ", "ᚱ"]
+    },
+    "on-click": "pavucontrol",
+    "tooltip-format": "{volume}%"
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+
+  "bluetooth": {
+    "format": "ᛒ",
+    "format-connected": "ᛒ",
+    "format-disabled": "·",
+    "format-off": "·",
+    "tooltip-format": "{status}",
+    "tooltip-format-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+
+  "network": {
+    "format-wifi": "ᚹ",
+    "format-ethernet": "ᛁ",
+    "format-disconnected": "·",
+    "tooltip-format-wifi": "{essid} · {signalStrength}%",
+    "tooltip-format-ethernet": "{ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  "battery": {
+    "format": "{icon}",
+    "format-charging": "ᛇ",
+    "format-icons": ["·", "ᛁ", "ᛂ", "ᛃ", "ᛅ", "ᛇ", "ᛉ", "ᛋ", "ᛏ", "ᛒ"],
+    "tooltip-format": "{capacity}% · {timeTo}"
+  }
+}
